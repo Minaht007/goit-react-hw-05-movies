@@ -14,7 +14,7 @@ export const MovieDetails = () => {
 
   return (
     <div>
-      {' '}
+      {/* {''} */}
       <img src={`https://image.tmdb.org/t/p/w500/${film?.poster_path}`} />
       {film?.title}
       <Link to={`/movies/${movieId}/cast`}>Cast</Link>
