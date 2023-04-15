@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { MovieList } from 'components/MovieList.jsx';
 
 import { getTranding } from '../components/Fetch/Fetch.jsx';

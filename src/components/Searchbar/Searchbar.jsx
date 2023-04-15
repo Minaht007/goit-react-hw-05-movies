@@ -1,5 +1,4 @@
-import { Suspense, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 
 export const SearchMovie = ({ onSubmit }) => {
   // const [searchParams] = useSearchParams();

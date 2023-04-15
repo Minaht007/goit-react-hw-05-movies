@@ -29,3 +29,10 @@ export const getMoviesByCast = async id => {
   );
   return response.data;
 };
+
+export const getMoviesByReviews = async id => {
+  const response = await axios.get(
+    `/movie/${id}/reviews?api_key=${ApiKey}&language=en-US&page=1`
+  );
+  return response.data;
+};
