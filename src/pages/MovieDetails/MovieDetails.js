@@ -31,7 +31,7 @@ export const MovieDetails = () => {
       <Link to={`/movies/${movieId}/cast`} style={{ marginRight: '20px' }}>
         Cast
       </Link>
-      <Link to={`/movies/${movieId}/rewies`}>Reviews</Link>
+      <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
       <Outlet />
     </div>
   );
