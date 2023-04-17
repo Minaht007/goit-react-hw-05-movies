@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import { getMoviesById } from 'components/Fetch/Fetch';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -11,6 +11,9 @@ export const MovieDetails = () => {
       .then(results => setFilm(results))
       .catch(eror => console.log(eror));
   }, [movieId]);
+
+  const location = useLocation;
+  const goBack = location.state?.from ?? '/';
 
   return (
     <div
@@ -22,12 +25,14 @@ export const MovieDetails = () => {
     >
       {''}
       {film?.title}
+
+      <Link to={goBack}>Go Back</Link>
+
       <img
         style={{ width: '200px' }}
         src={`https://image.tmdb.org/t/p/w500/${film?.poster_path}`}
         alt="#"
       />
-
       <Link to={`/movies/${movieId}/cast`} style={{ marginRight: '20px' }}>
         Cast
       </Link>
