@@ -1,0 +1,23 @@
+.movie {
+  display: flex;
+  flex-direction: row;
+}
+
+.movielist_list {
+  display: flex;
+  flex-basis: calc((100% -3 * 30) / 4);
+  top: 100px;
+  margin-right: 20px;
+  background-color: beige;
+}
+
+.posters {
+  border-radius: 10px;
+  width: 400px;
+}
+
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

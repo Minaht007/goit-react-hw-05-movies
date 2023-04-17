@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { MovieList } from 'components/MovieList.jsx';
-
 import { getTranding } from '../components/Fetch/Fetch.jsx';
 
 export const Home = () => {

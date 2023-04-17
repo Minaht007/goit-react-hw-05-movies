@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Style from '../Style/Style.module.css';
 
 export const SearchMovie = ({ onSubmit }) => {
   // const [searchParams] = useSearchParams();
@@ -11,7 +12,7 @@ export const SearchMovie = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={formSubmit}>
+    <form onSubmit={formSubmit} className={Style.search}>
       <input
         type="text"
         value={qwery}

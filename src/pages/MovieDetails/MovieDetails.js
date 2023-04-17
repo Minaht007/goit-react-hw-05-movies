@@ -13,11 +13,25 @@ export const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <div>
-      {/* {''} */}
-      <img src={`https://image.tmdb.org/t/p/w500/${film?.poster_path}`} />
+    <div
+      style={{
+        displa: 'flex',
+        flexDirection: 'column',
+        textAlign: 'start',
+      }}
+    >
+      {''}
       {film?.title}
-      <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+      <img
+        style={{ width: '200px' }}
+        src={`https://image.tmdb.org/t/p/w500/${film?.poster_path}`}
+        alt="#"
+      />
+
+      <Link to={`/movies/${movieId}/cast`} style={{ marginRight: '20px' }}>
+        Cast
+      </Link>
+      <Link to={`/movies/${movieId}/rewies`}>Reviews</Link>
       <Outlet />
     </div>
   );

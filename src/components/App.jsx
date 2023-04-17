@@ -12,7 +12,8 @@ export const App = () => {
       style={{
         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: 'column',
+        justifyContent: 'baseline',
         alignItems: 'center',
         fontSize: 40,
         color: '#010101',
@@ -28,13 +29,6 @@ export const App = () => {
           </Route>
         </Route>
       </Routes>
-      {/* <Movie />
-      
-      <Routes>
-        <Route pass="/" element="Home"></Route>
-        <Route pass="/Home" element={<Home />}></Route>
-        <Route pass="Movie" element={<Movie />}></Route>
-      </Routes> */}
     </div>
   );
 };
