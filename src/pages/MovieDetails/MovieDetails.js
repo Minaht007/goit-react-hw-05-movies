@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import { getMoviesById } from 'components/Fetch/Fetch';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -12,9 +12,10 @@ export const MovieDetails = () => {
       .catch(eror => console.log(eror));
   }, [movieId]);
 
-  const location = useLocation;
-  const goBack = location.state?.from ?? '/';
-
+  // const location = useLocation;
+  // const goBack = location.state?.from ?? '/';
+  const navigate = useNavigate();
+  const GoBack = () => navigate(-1);
   return (
     <div
       style={{
@@ -24,9 +25,17 @@ export const MovieDetails = () => {
       }}
     >
       {''}
-      {film?.title}
-
-      <Link to={goBack}>Go Back</Link>
+      <header
+        style={{
+          textAlign: 'start',
+          display: 'flex',
+          justifyContent: 'flex-start',
+        }}
+      >
+        {film?.title}
+        <button onClick={() => GoBack()}>GoGo</button>
+        {/* <Link to={goBack}>Go Back</Link> */}
+      </header>
 
       <img
         style={{ width: '200px' }}
