@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { SearchMovie } from 'components/Searchbar/Searchbar';
+import { SearchForm } from 'components/Searchbar/Searchbar';
 import { getMoviesByWord } from 'components/Fetch/Fetch';
 import { MovieList } from 'components/MovieList';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const Movie = () => {
   const [qwery, setQwery] = useState(' ');
+  // const [qwery] = useSearchParams;
   const [films, setFilms] = useState([]);
   const handleSubmit = name => {
     setQwery(name);
@@ -20,7 +21,7 @@ export const Movie = () => {
   const GoBack = () => navigate(-1);
   return (
     <div>
-      <SearchMovie onSubmit={handleSubmit} />
+      <SearchForm onSubmit={handleSubmit} />
       <MovieList movies={films} />
       <button onClick={GoBack}> GO BACK</button>
     </div>

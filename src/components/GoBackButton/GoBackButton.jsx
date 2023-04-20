@@ -1,6 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 // const location = useLocation;
 // export const goBack = location.state?.from ?? '/';
-const navigate = useNavigate;
-export const GoBack = () => navigate(-1);
+export const GoBack = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handlGoBack = () => {
+    navigate(location?.state?.from ?? '/');
+  };
+  return <button onClick={handlGoBack}>Go Back</button>;
+};
